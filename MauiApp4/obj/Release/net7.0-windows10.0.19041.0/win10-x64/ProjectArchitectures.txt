@@ -1,1 +1,0 @@
-D:\RiderProjects\GazMeme_2\MauiApp4\MauiApp4.csproj;x64

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MauiApp4</name>
+    </assembly>
+    <members>
+        <member name="P:MauiApp4.Data.DirectionOfVolunteering.Name">
+            <summary>
+            Название
+            </summary>
+        </member>
+        <member name="P:MauiApp4.Data.DirectionOfVolunteering.Description">
+            <summary>
+            Описание направления
+            </summary>
+        </member>
+        <member name="P:MauiApp4.Data.DirectionOfVolunteering.Employee">
+            <summary>
+            Руководитель
+            </summary>
+        </member>
+        <member name="M:MauiApp4.Data.DirectionOfVolunteeringExtensions.New(System.Collections.Generic.List{MauiApp4.Data.DirectionOfVolunteering},System.Action{MauiApp4.Data.DirectionOfVolunteering})">
+            <summary>
+            Добавляет новое направление
+            </summary>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MauiApp4.Data.DirectionOfVolunteeringExtensions.FillInformation(MauiApp4.Data.DirectionOfVolunteering,System.String,System.String,System.String)" -->
+        <member name="M:MauiApp4.Data.DirectionOfVolunteeringExtensions.AddEmployee(MauiApp4.Data.DirectionOfVolunteering,System.String,System.String,System.String,System.String)">
+            <summary>
+            Устанавливает руководителя направления
+            </summary>
+            <param name="direction"></param>
+            <param name="fullName">ФИО руководителя</param>
+            <param name="phoneNumber">Контактный номер</param>
+            <param name="email">Контактный email</param>
+            <param name="photoUrl">Относительный путь до фото</param>
+            <returns></returns>
+        </member>
+        <member name="P:MauiApp4.Data.EmployeeData.PhotoUrl">
+            <summary>
+            Относительный путь до фотографии
+            </summary>
+        </member>
+        <member name="P:MauiApp4.Data.EmployeeData.FullName">
+            <summary>
+            ФИО
+            </summary>
+        </member>
+        <member name="P:MauiApp4.Data.EmployeeData.PhoneNumber">
+            <summary>
+            Номер телефона
+            </summary>
+        </member>
+        <member name="P:MauiApp4.Data.EmployeeData.Email">
+            <summary>
+            Почта
+            </summary>
+        </member>
+        <member name="T:MauiApp4.Data.VolunteeringList">
+            <summary>
+            Список направлений
+            </summary>
+        </member>
+    </members>
+</doc>

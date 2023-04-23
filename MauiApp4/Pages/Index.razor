@@ -1,0 +1,27 @@
+﻿@page "/"
+@using MauiApp4.Data
+@inject VolunteeringList _volunteeringList;
+
+@{
+    foreach (var direction in _volunteeringList.DirectionOfVolunteerings)
+    {
+        <div Style="padding: 1rem">
+            <MudCard Elevation="5">
+                <div class="d-flex justify-center">
+                    <MudImage Src="images/no_image_icon.png" Height="200" Alt="Swedish Farm House" Class="rounded-lg ma-4"/>
+                </div>
+                @* <MudCardMedia Image="images/no_image_icon.png" Height="200"/> *@
+                <MudCardContent>
+                    <MudDivider/>
+                    <MudText Typo="Typo.h6">@direction.Name</MudText>
+                    <MudText Style="font-size: 18px;">@direction.Employee.FullName</MudText>
+                    <MudText Class="mt-1" Typo="Typo.body2">@direction.Description</MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudSpacer/>
+                    <MudButton Variant="Variant.Text" Color="Color.Info" Href=@direction.NavigationUrl>Подробнее</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </div>
+    }
+}

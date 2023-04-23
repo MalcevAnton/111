@@ -1,0 +1,61 @@
+﻿@page "/about-direction/{id:int}"
+@using MauiApp4.Data
+@inject VolunteeringList VolunteeringList
+
+<div>
+    <div class="d-flex justify-center" style="padding: 1rem;">
+        <MudCarousel Class="mud-width-full"
+                     Style="height:250px;"
+                     ShowArrows="true"
+                     ShowBullets="false"
+                     EnableSwipeGesture="true" AutoCycle="true" TData="object">
+            
+            @{
+                var direction = VolunteeringList.DirectionOfVolunteerings[Id];
+                foreach (var image in direction.CarouselImages)
+                {
+                    <MudCarouselItem Transition="Transition.Slide" Color="@Color.Primary">
+                            <MudImage Height="250" Src="@image" Class="rounded-lg"/>
+                    </MudCarouselItem>   
+                }
+            }
+        </MudCarousel>
+    </div>
+    <MudText Typo="Typo.h5" Align="Align.Center" class="mt-3" Style="font-weight: 300">@VolunteeringList.Direction(Id).Name</MudText>
+    <MudDivider/>
+    <div class="mud-background-gray py-3">
+        <MudText Style="font-size: 22px; font-weight: 400; font-family: Arial,monospace" Align="Align.Center" class="text-lighten-5">Руководитель направления:</MudText>
+        <div class="d-flex justify-center mt-2">
+            <MudImage Elevation="3" Height="200" Src="@Direction.Employee.PhotoUrl"/>
+        </div>
+        <MudText Style="font-size: 18px; font-weight: 400;" Align="Align.Center" class="text-lighten-5 mt-1">@Direction.Employee.FullName</MudText>
+    </div>
+    
+    <MudDivider/>
+    <div class="py-3 my-1">
+        <MudText Style="font-size: 22px; font-weight: 400; font-family: Arial,monospace" Align="Align.Center" class="text-lighten-5">Описание</MudText>
+        <MudText Align="Align.Start" Typo="Typo.body1" Class="px-3">@Direction.FullDescription</MudText >
+    </div>
+    <MudDivider/>
+    
+    <div class="mud-background-gray py-3 px-3">
+        <MudText Style="font-size: 22px; font-weight: 400; font-family: Arial,monospace" Align="Align.Center" class="text-lighten-5">Контактная информация</MudText>
+        <div class="mt-1 d-flex align-center">
+            <MudText Style="font-size: 18px; font-weight: 400;">Номер телефона: </MudText>
+            <MudText Style="font-size: 18px; font-weight: 300;" class="text-lighten-5 mt-1 ml-2">@Direction.Employee.PhoneNumber</MudText>
+        </div>
+        <div class="mt-1 d-flex align-center">
+            <MudText Style="font-size: 18px; font-weight: 400;">Почта: </MudText>
+            <MudText Style="font-size: 18px; font-weight: 300;" class="text-lighten-5 mt-1 ml-2">@Direction.Employee.Email</MudText>
+        </div>
+    </div>
+    <MudDivider/>
+    
+</div>
+@code{
+
+    [Parameter]
+    public int Id { get; set; }
+
+    public DirectionOfVolunteering Direction => VolunteeringList.DirectionOfVolunteerings[Id];
+}
